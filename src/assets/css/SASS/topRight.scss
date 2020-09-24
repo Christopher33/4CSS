@@ -1,0 +1,91 @@
+//COLOR
+$grey: #cfcfcf;
+
+.topRight{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35%;
+  border-bottom: solid 1px $grey;
+}
+
+.topRight a{
+  font-size: 14px;
+  padding: 15px;
+}
+
+.blackOrWhite div span{
+  font-family: 'Spartan', sans-serif;
+  color: $grey;
+  font-size: 11px;
+}
+
+.blackOrWhite{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blackOrWhite div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.separateLigne{
+  width: 22px;
+  margin: 8px 0 11px 0;
+  background: $grey;
+}
+
+.blackOrWhite label{
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transform: scale(0.7);
+}
+
+.blackOrWhite label input{
+  appearance: none;
+  display: none;
+}
+
+.blackOrWhite label span{
+  position: relative;
+  display: block;
+  width: 35px;
+  height: 78px;
+  background: #2b2b2b;
+  border-radius: 40px;
+  border: solid 2px #aaaaaa;
+  box-shadow: inset 0 2px 15px rgba(0,0,0, 0.2),
+              inset 0 2px 2px rgba(0,0,0, 0.2),
+              inset 0 -1px 1px rgba(0,0,0, 0.2);
+}
+
+.indicator{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(to bottom, #6c6c6c, #343434);
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0, 0.5),
+              inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  transition: 0.5s;
+  transform: scale(0.8);
+  border: solid 2px #aaaaaa;
+}
+
+.blackOrWhite input:checked ~ .indicator{
+  top: 45px;
+}

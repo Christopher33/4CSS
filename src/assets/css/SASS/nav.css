@@ -1,0 +1,121 @@
+@charset "UTF-8";
+nav {
+  background-color: #585858;
+  height: 100vh;
+  width: 20%;
+}
+
+/*Gestion du logo*/
+.logo {
+  width: 100%;
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.img_logo {
+  width: 180px;
+  height: auto;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+.img_logo:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+/*Gestion des liens*/
+.list {
+  width: 100%;
+  height: 65%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+li, a, a:hover {
+  list-style: none;
+  text-align: center;
+  text-decoration: none;
+  color: #cfcfcf;
+  font-size: 20px;
+  font-family: 'Spartan', sans-serif;
+}
+
+.list > ul > li {
+  padding: 35px;
+  font-weight: bold;
+}
+
+ul > li > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 500;
+}
+
+li > ul > li:nth-child(2) {
+  padding: 0 10px;
+}
+
+.hori_verti {
+  display: -ms-inline-grid;
+  display: inline-grid;
+}
+
+.list > ul > li:nth-child(1) > a:hover {
+  color: #dd00ff;
+}
+
+.list > ul > li:nth-child(2) > a:hover {
+  color: #FF9E48;
+}
+
+li > ul > li:nth-child(1) > a:hover {
+  color: #8cfff3;
+}
+
+li > ul > li:nth-child(3) > a:hover {
+  color: #6bff80;
+}
+
+.list > ul > li:nth-child(3) > a:hover {
+  color: #fffd59;
+}
+
+.list > ul > li:nth-child(4) > a:hover {
+  color: #ff629b;
+}
+
+/*Gestion du texte "Tout droit réservé"*/
+nav > div:nth-child(3) {
+  font-family: 'Spartan', sans-serif;
+  font-size: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 15%;
+  color: #AAAAAA;
+}
+/*# sourceMappingURL=nav.css.map */

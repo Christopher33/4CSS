@@ -1,0 +1,30 @@
+.formConnect{
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background: #5eb5e0;
+  width: 35%;
+  height: 50vh;
+}
+
+.pomme{
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background: #e02e26;
+  width: 35%;
+  height: 50vh;
+}
+
+.formClose{
+  display: none;
+}
+
+.toto{
+}
