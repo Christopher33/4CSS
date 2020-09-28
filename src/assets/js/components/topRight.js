@@ -16,7 +16,8 @@ class LoginSub extends React.Component{
         this.openInsc=this.openInsc.bind(this);
         this.outConnect=this.outConnect.bind(this);
         this.outInsc=this.outInsc.bind(this);
-        // this.outClick=this.outClick.bind(this);
+        this.handleDocumentClick=this.handleDocumentClick.bind(this);
+        this.componentDidMount=this.componentDidMount.bind(this);
     }
 
     openConnect () {
@@ -38,7 +39,6 @@ class LoginSub extends React.Component{
     }
 
     outConnect () {
-
         this.setState({conex: false});
     }
 
@@ -46,23 +46,26 @@ class LoginSub extends React.Component{
         this.setState({insc: false});
     }
 
-    // outClick () {
-    //     const out = document.getElementById("out");
-    //     window.onclick = function(event) {
-    //         if(event.taget === out) {
-    //             console.log("out")
-    //         }
-    //     };
-    // }
+    handleDocumentClick = (e) => {
+        const isClose = e.target.closest(`[id=blur]`);
 
+        if(isClose) {
+            this.outConnect();
+            this.outInsc();
+        }
+    }  
+
+    componentDidMount() {
+        document.addEventListener("click", this.handleDocumentClick); 
+    }
 
     render() {
         const { conex, insc } = this.state;
-        return (
+        return (            
             <>
                 <div className={"topRight"}>
-                    <a href={"#"} onClick={this.openConnect}>Connexion</a>
-                    <a href={"#"} onClick={this.openInsc}>Inscription</a>
+                    <a href={"#"} id="toto" onClick={this.openConnect}>Log In</a>
+                    <a href={"#"} onClick={this.openInsc}>Sign Up</a>
                     <div className={"blackOrWhite"}>
                         <div>
                             <span>Black</span>
@@ -76,20 +79,55 @@ class LoginSub extends React.Component{
                         </label>
                     </div>
                 </div>
-                <div className={`${conex ? "formConnect" : 'formClose'}`} id="out">
-                    <button onClick={this.outConnect}>X</button>
-                    <form>
-                        <label>Name :</label>
-                        <input></input>
-                    </form>                 
-                </div>
-                <div className={`${insc ? "pomme" : 'formClose'}`}>
-                <button onClick={this.outInsc}>X</button>
-                    <form>
-                        <label>Name :</label>
-                        <input></input>
-                    </form>
-                </div>
+
+                {conex ? <>
+                            <div className="formConnect">
+                                <div onClick={this.outConnect} className="close-container">
+                                    <div className="leftright"></div>
+                                    <div className="rightleft"></div>
+                                </div>
+                                <h2>Login</h2>
+                                <form className="form_conect">
+                                    <label htmlFor="email">Email</label>
+                                    <input type="email" name="email" required></input>
+                                    <label htmlFor="password">Your password</label>
+                                    <input name="current-password" type="password" required></input>
+                                    <div>
+                                        <button type="submit">Submit</button>
+                                        <a href={"#"} onClick={this.openInsc}>Sign Up</a>
+                                    </div>
+                                </form>
+                            </div>
+                            <div id="blur"></div>
+                        </>
+                    : ''
+                }
+
+                {insc ? <><div className="formConnect" id="inscip">
+                            <div onClick={this.outInsc} className="close-container">
+                                <div className="leftright"></div>
+                                <div className="rightleft"></div>
+                            </div>
+                            <h2>Sign In</h2>
+                            <form className="form_conect">
+                                <label htmlFor="name">Your name</label>
+                                <input type="text" name="name" required></input>
+                                <label htmlFor="username">Choose a username</label>
+                                <input type="text" name="username" required></input>
+                                <label htmlFor="email">Email</label>
+                                <input type="email" name="email" required></input>
+                                <label htmlFor="password">Choose password</label>
+                                <input name="current-password" type="password" required></input>
+                                <div>
+                                    <button type="submit" className="btn_sub">Submit</button>                                             
+                                    <a href={"#"} onClick={this.openConnect}>Log in</a>
+                                </div>
+                            </form> 
+                        </div> 
+                        <div id="blur"></div></>
+                    : ''
+                }
+
             </>
         )
     }

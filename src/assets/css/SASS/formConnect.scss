@@ -1,30 +1,151 @@
-.formConnect{
-  display: flex;
-  position: absolute;
-  top: 50%;
-  left: 60%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  background: #5eb5e0;
-  width: 35%;
-  height: 50vh;
-}
-
-.pomme{
-  display: flex;
-  position: absolute;
-  top: 50%;
-  left: 60%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  background: #e02e26;
-  width: 35%;
-  height: 50vh;
-}
-
 .formClose{
   display: none;
 }
 
-.toto{
+#blur{
+  position: absolute;
+  top: -50%;
+  left: -130%;
+  width: 300%;
+  height: 150%;
+  backdrop-filter: blur(4px);
+  z-index: 950;
+  transition: 0.3s ease-in-out;
+}
+
+
+// Gestion du formulaire Login / Sign In
+.formConnect{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  padding: 30px;
+  background:#828282;
+  width: 25%;
+  border-radius: 3px;
+  color: #F3F3F3;
+  font-size: 13px;
+}
+
+.formConnect h2{
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Spartan', sans-serif;
+  font-weight: 400;
+  letter-spacing: 8px;
+  font-size: 34px;
+  text-align: center;
+  width: 100%;
+  padding: 4%;
+}
+
+.formConnect a{
+  font-size: 12px;
+  line-height: 40.4px;
+  transition: 0.3s ease-in-out;
+}
+
+.formConnect a:hover{
+  transform: scale(1.1);
+  color: #e7e7e7;
+}
+
+.form_conect{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%);
+  text-align: start;
+  font-family: 'Spartan', sans-serif;
+  padding: 0 10%;
+}
+
+.form_conect label{
+  padding: 15px 0 5px;
+  letter-spacing: 2px;
+}
+
+.form_conect input{
+  border: none;
+  height: 24px;
+  padding-left: 7px;
+}
+
+.form_conect div{
+  padding: 15% 0 4%;
+  display: flex;
+  justify-content: space-between;
+}
+
+// Gestion du boutton de fermeture
+.close-container {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.leftright {
+  height: 3px;
+  width: 25px;
+  position: absolute;
+  background-color: #aaaaaa;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  transition: all .3s ease-in;
+}
+
+.rightleft {
+  height: 3px;
+  width: 25px;
+  position: absolute;
+  background-color: #aaaaaa;
+  border-radius: 2px;
+  transform: rotate(-45deg);
+  transition: all .3s ease-in;
+}
+
+.close-container:hover .leftright {
+  transform: rotate(-45deg);
+  background-color: #e7e7e7;
+}
+
+.close-container:hover .rightleft {
+  transform: rotate(45deg);
+  background-color: #e7e7e7;
+}
+
+// Gestion du Bouton Submit
+.formConnect button{
+  padding: 5px 16px;
+  color: #b7ffbf;
+  font-family: 'Spartan', sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  background: #82828200;
+  border: solid 2px #b7ffbf;
+  line-height: 30.4px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.formConnect button:hover{
+  border: solid 2px #b7ffbf00;
+  background-color: #b7ffbf;
+  color: #828282;
 }
